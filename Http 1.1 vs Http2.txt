@@ -1,0 +1,18 @@
+HTTP2 is much faster and more reliable than HTTP1.1 HTTP1.1 loads a single request for every TCP 
+connection, while HTTP2 avoids network delay by using multiplexing.
+
+HTTP is a network delay sensitive protocol in the sense that if there is 
+less network delay, then the page loads faster
+
+HTTP 1.1 : 
+     It supports connection reuse i.e. for every TCP connection there could
+be multiple requests and responses, and pipelining where the client can request
+several resources from the server at once. However , pipelining was hard to 
+implement due to issues such as head-of-line blocking and was not a feasible solution.
+HTTP 2 :
+     Uses multiplexing, where over a single TCP connection resources to be 
+delivered are interleaved and arrive at the client almost at the same time. 
+It is done using streams which can be prioritized, can have dependencies and 
+individual flow control. It also provides a feature called server push that 
+allows the server to send data that the client will need but has not yet requested.
+
